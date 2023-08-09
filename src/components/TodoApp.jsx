@@ -1,6 +1,7 @@
 import { useReducer } from "react"
 import todoReducer from "../todoReducer"
 import TodoList from "./TodoList"
+import TodoAdd from "./TodoAdd"
 
 const initialState = [{
     id: new Date().getTime(),
@@ -16,6 +17,9 @@ const initialState = [{
 
 export default function TodoApp() {
     const [todos, dispatch] = useReducer(todoReducer, initialState)
+    const handlerTodos = (todo) => {
+        console.log(todo)
+    }
 
   return (
     <>
@@ -31,20 +35,7 @@ export default function TodoApp() {
             <div className="col-5">
                 <h4>Agregar TODO</h4>
                 <hr />
-                <form>
-                    <input
-                        type="text"
-                        name="description"
-                        placeholder="Aprender..."
-                        autoComplete="off"
-                        className="form-control"
-                    />
-                    <button
-                        className="btn btn-outline-primary mt-1 btn-block"
-                    >
-                        Agregar
-                    </button>
-                </form>
+                <TodoAdd handlerTodos={handlerTodos} />
             </div>
         </div>
 

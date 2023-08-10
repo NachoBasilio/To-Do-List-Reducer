@@ -43,6 +43,8 @@ export default function useTodo() {
 
     return {
         todos,
+        allTodos: todos.length,
+        pendingTodos: todos.filter(todo => !todo.done).length,
         handlerTodos,
         handlerDelete,
         handleDoubleClick

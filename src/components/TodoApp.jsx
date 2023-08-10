@@ -5,11 +5,12 @@ import TodoAdd from "./TodoAdd"
 
 
 export default function TodoApp() {
-    const {todos, handlerTodos, handlerDelete, handleDoubleClick} = useTodo()
-  return (
+    const {todos, allTodos, pendingTodos,handlerTodos, handlerDelete, handleDoubleClick} = useTodo()
+    console.log(todos, allTodos, pendingTodos)
+    return (
     <>
         <h1>
-            Todo App: 10 <small>pendientes: 2</small>
+            TodoApp: {allTodos} <small>pendientes: {pendingTodos}</small>
         </h1>
         <hr />
         

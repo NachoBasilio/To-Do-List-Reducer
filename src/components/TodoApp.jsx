@@ -25,6 +25,24 @@ export default function TodoApp() {
         dispatch(action)
     }
 
+    const handlerDelete = (todoId) => {
+        const action = {
+            type: "delete Todo",
+            payload: todoId
+        }
+
+        dispatch(action)
+    }
+
+    const handleDoubleClick = (todoId) => {
+        const action = {
+            type: "toggle Todo",
+            payload: todoId
+        }
+
+        dispatch(action)
+    }
+
   return (
     <>
         <h1>
@@ -34,7 +52,7 @@ export default function TodoApp() {
         
         <div className="row">
             <div className="col-7">
-                <TodoList todos={todos} />
+                <TodoList todos={todos} handleDoubleClick={handleDoubleClick} handlerDelete={handlerDelete} />
             </div>
             <div className="col-5">
                 <h4>Agregar TODO</h4>

@@ -5,12 +5,16 @@ export default function TodoAdd({handlerTodos}) {
         <form onSubmit={
             (e) => {
                 e.preventDefault()
+                if (e.target.description.value.trim().length <= 1) {
+                    return
+                }
                 const newTodo = {
                     id: new Date().getTime(),
-                    desc: 'Aprender React',
+                    desc: e.target.description.value,
                     done: false
                 }
                 handlerTodos(newTodo)
+                e.target.reset()
             }
         }>
             <input

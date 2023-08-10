@@ -1,12 +1,12 @@
 import useTodo from "../Hooks/useTodo"
-import TodoList from "./TodoList"
-import TodoAdd from "./TodoAdd"
+import TodoList from "../components/TodoList"
+import TodoAdd from "../components/TodoAdd"
 
 
 
 export default function TodoApp() {
     const {todos, allTodos, pendingTodos,handlerTodos, handlerDelete, handleDoubleClick} = useTodo()
-    console.log(todos, allTodos, pendingTodos)
+    
     return (
     <>
         <h1>

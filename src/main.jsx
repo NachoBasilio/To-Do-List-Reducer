@@ -1,7 +1,11 @@
-import TodoApp from './components/TodoApp.jsx'
+import App from './App'
 import ReactDOM from 'react-dom/client'
 import "./main.css"
 
+import { BrowserRouter } from 'react-router-dom'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <TodoApp />
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>    
 )

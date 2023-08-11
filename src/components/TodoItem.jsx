@@ -6,7 +6,7 @@ export default function TodoItem({todo, handlerDelete, handleDoubleClick}) {
     <>
         <li  className="list-group-item d-flex justify-content-between ">
             <span 
-            
+            aria-label="span"
             className={`align-self-center ${
                 todo.done && 'text-decoration-line-through'
             }`}

@@ -8,10 +8,7 @@ export default function HomePage() {
 
   return (
     <>
-        <h1>Home page
-            <small>
-                {user?.name}
-            </small>
+        <h1>Home page <small>{user?.name}</small>
         </h1>
         <hr />
 

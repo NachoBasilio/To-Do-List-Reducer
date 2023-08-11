@@ -27,6 +27,36 @@ describe("Pruebas en el TodoItem", () => {
 
         const spanElement = screen.getByLabelText("span")
         expect(spanElement.className).toContain("align-self-center")
+        expect(spanElement.className).not.toContain("text-decoration-line-through")
 
    })
+
+   test("Debe mostrar el todo compledos", () => {
+    todo.done = true
+
+    render(<TodoItem 
+        todo={todo} 
+        handlerDelete={handleDelete} 
+        handleDoubleClick={handleDoubleClick} 
+    />)
+    
+  
+
+    const spanElement = screen.getByLabelText("span")
+    expect(spanElement.className).toContain("text-decoration-line-through")
+
+    })
+
+    test("Debe llamar la funcion handleDelete", () => {
+        render(<TodoItem 
+            todo={todo} 
+            handlerDelete={handleDelete} 
+            handleDoubleClick={handleDoubleClick} 
+        />)
+        
+        const buttonElement = screen.getByRole("button")
+        buttonElement.click()
+        expect(handleDelete).toHaveBeenCalledWith(todo.id)
+    }
+    )
 })

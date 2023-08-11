@@ -4,10 +4,12 @@ import AboutPage from './pages/AboutPage'
 import TodoApp from './pages/TodoApp'
 import LoginPage from './pages/LoginPage'
 import NavBar from './components/NavBar'
+import UserPorvider from './context/UserPorvider'
+
 
 export default function App() {
   return (
-    <div>
+    <UserPorvider>
 
         <NavBar />
         <hr />
@@ -19,6 +21,6 @@ export default function App() {
             <Route path='/login' element={ <LoginPage/>}></Route>
             <Route path='*' element={ <Navigate to="/about"/>}></Route>
         </Routes>
-    </div>
+    </UserPorvider>
   )
 }

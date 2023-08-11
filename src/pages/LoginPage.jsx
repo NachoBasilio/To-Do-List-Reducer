@@ -19,8 +19,8 @@ export default function LoginPage() {
             () => {
                 setUser({
                     id: 123,
-                    name: 'Juanito',
-                    email: "Nacho@gmail.com"
+                    name: '@AGJavaScriptero',
+                    email: "AGJavaScriptero@gmail.com"
                 }) 
               }
             }
